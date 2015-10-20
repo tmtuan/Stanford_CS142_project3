@@ -1,0 +1,8 @@
+<p>Search key: <%= $searchkey %></p>
+<h2>States: <%= $states.count %></h2>
+<p>n: <%= $n %></p>
+<h2>Found States</h2>
+<p>Results: <%= $results.count %></p>
+<% $results.each do |s| %>
+    <p><%= s %></p>
+<% end %>
