@@ -1,12 +1,17 @@
-<h1>States#filter</h1>
-<%= form_for :states do |f| %>
-    <%= f.text_field :searchkey, :placeholder => "Enter your keyword" %>
-    <%= f.submit "Search" %>
-<% end %>
-<p>Search key: <%= @temp_searchkey %></p>
-<p>Number of States: <%= $states.count %></p>
-<h2>Found States</h2>
-<p>Results: <%= $results.count %></p>
-<% $results.each do |s| %>
-    <p><%= s %></p>
-<% end %>
+<div class="container-fluid">
+  <div class="col-md-4 col-md-offset-4">
+    <h1>States Filter</h1>
+    <%= form_for :states, html: { class: "form-group" } do |f| %>
+        <%= f.text_field :searchkey, :placeholder => "Enter your keyword", :class => "form-control" %>
+        <br />
+        <%= f.submit "Search", :class => "btn btn-success btn-lg btn-block" %>
+    <% end %>
+    <p>Search key: <%= @temp_searchkey %></p>
+    <p>Number of States: <%= $states.count %></p>
+    <h2>Found States</h2>
+    <p>Results: <%= $results.count %></p>
+    <% $results.each do |s| %>
+        <p><%= s %></p>
+    <% end %>
+  </div>
+</div>
