@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get 'states/filter' => 'states#filter'
+  post 'states/filter' => 'states#filter'
+
   get 'states/show' => 'states#show'
 
+  root 'states#filter'
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

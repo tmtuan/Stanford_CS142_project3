@@ -12,15 +12,17 @@ class StatesController < ApplicationController
             "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
 
   $results = Array.new
+
   def filter
     $results.clear
-    $searchkey = params[:substring].downcase
 
+    $searchkey = params[:states]
 
     if $searchkey != nil
+      @temp_searchkey = $searchkey[:searchkey].downcase
       $states.each do |s|
         @temp_s = s.downcase
-        if @temp_s.include? $searchkey
+        if @temp_s.include? @temp_searchkey
           $results.push(s)
         end
       end
